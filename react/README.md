@@ -5,6 +5,8 @@ react-watermark
 
 [![Build & Deploy](https://github.com/uiwjs/react-watermark/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-watermark/actions/workflows/ci.yml)
 [![Coverage Status](https://uiwjs.github.io/react-watermark/badges.svg)](https://uiwjs.github.io/react-watermark/coverage/lcov-report/)
+[![NPM Downloads](https://img.shields.io/npm/dm/@uiw/react-watermark.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-watermark)
+[![NPM Version](https://img.shields.io/npm/v/@uiw/react-watermark.svg)](https://www.npmjs.com/package/@uiw/react-watermark)
 
 A react component that adds a watermark to an area of a web page. Example Preview: https://uiwjs.github.io/react-watermark
 
@@ -13,7 +15,7 @@ A react component that adds a watermark to an area of a web page. Example Previe
 Not dependent on **uiw**.
 
 ```bash
-npm i react-watermark
+npm i @uiw/react-watermark
 ```
 
 ### Using
@@ -64,6 +66,9 @@ export default function App() {
 ```
 
 ## In the static pages
+
+[![NPM Downloads](https://img.shields.io/npm/dm/@uiw/watermark.js.svg?style=flat)](https://www.npmjs.com/package/@uiw/watermark.js)
+[![NPM Version](https://img.shields.io/npm/v/@uiw/watermark.js.svg)](https://www.npmjs.com/package/@uiw/watermark.js)
 
 ```bash
 npm i @uiw/watermark.js
