@@ -1,5 +1,5 @@
 /**! 
- * @uiw/watermark.js v0.0.2 
+ * @uiw/watermark.js v0.0.3 
  * JavaScript library for generating image watermarks using canvas. 
  * 
  * Copyright (c) 2022 kenny wang <wowohoo@qq.com> 
