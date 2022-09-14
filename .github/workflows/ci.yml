@@ -55,6 +55,7 @@ jobs:
       - run: cp -rp core/dist/*.js website/build
       - run: cp -rp core/dist/*.ts website/build
       - run: cp -rp core/dist/*.map website/build
+      - run: cp core/dist/index.html website/build/example.html
 
       - name: Is a tag created auto?
         id: create_tag
@@ -105,3 +106,9 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./react/package.json
+
+      - name: 📦 @uiw/watermark.js publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./core/package.json
