@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "scripts": {
+    "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
+    "build": "lerna exec --scope @uiw/* -- tsbb build && npm run css:build && npm run css:build:dist",
+    "watch": "lerna exec \"tsbb watch\" --scope @uiw/* & npm run css:watch",
+    "css:build": "lerna exec --scope @uiw/* -- compile-less -d src -o esm",
+    "css:watch": "lerna exec --scope @uiw/* -- compile-less -d src -o esm --watch",
+    "css:build:dist": "lerna exec --scope @uiw/* -- compile-less -d src -o lib --combine=dist.css",
+    "bundle": "lerna exec --scope @uiw/* -- ncc build src/index.tsx --target web --filename dist",
+    "bundle:min": "lerna exec --scope @uiw/* -- ncc build src/index.tsx --target web --filename dist --minify",
+    "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
+    "start": "lerna exec --scope website -- npm run start",
+    "doc": "lerna exec --scope website -- npm run build",
+    "bootstrap": "lerna bootstrap",
+    "hoist": "lerna bootstrap --hoist",
+    "test": "tsbb test",
+    "coverage": "tsbb test --coverage --bail",
+    "prepare": "husky install",
+    "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "remove": "npm run clean && lerna exec \"rm -rf package-lock.json\" --scope @uiw/* --scope website",
+    "clean": "lerna clean --yes"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,less,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "<rootDir>/core/src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "testMatch": [
+      "<rootDir>/test/*.{ts,tsx}"
+    ],
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/?!(.*)"
+    ]
+  },
+  "workspaces": [
+    "website",
+    "core"
+  ],
+  "devDependencies": {
+    "@kkt/ncc": "^1.0.14",
+    "compile-less-cli": "^1.8.13",
+    "husky": "^8.0.1",
+    "lerna": "^5.4.3",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
+    "tsbb": "^3.7.7"
+  }
+}
