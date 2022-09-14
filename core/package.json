@@ -1,53 +1,38 @@
 {
-  "name": "@uiw/react-monorepo-template",
-  "version": "1.1.0",
-  "description": "React Monorepo Template.",
-  "author": "Kenny Wong <wowohoo@qq.com>",
-  "homepage": "https://uiwjs.github.io/react-monorepo-template",
+  "name": "@uiw/watermark.js",
+  "version": "0.0.2",
+  "homepage": "https://uiwjs.github.io/react-watermark",
+  "author": "kenny wang <wowohoo@qq.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uiwjs/react-monorepo-template.git"
+    "url": "https://github.com/uiwjs/react-watermark.git"
   },
   "license": "MIT",
-  "main": "./cjs/index.js",
-  "module": "./esm/index.js",
+  "description": "JavaScript library for generating image watermarks using canvas.",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "typings": "./dist/index.d.ts",
+  "unpkg": "./dist/watermark.js",
+  "jsdelivr": "./dist/watermark.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "start": "rollup -c rollup.config.js -w"
+  },
+  "keywords": [],
   "files": [
-    "dist.css",
+    "src",
     "dist",
-    "cjs",
-    "esm",
-    "src"
+    "!dist/index.html"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "react-monorepo-template",
-    "react.js",
-    "react",
-    "template",
-    "monorepo",
-    "monorepo-template",
-    "uiw",
-    "uiw-react",
-    "react-component",
-    "component",
-    "components",
-    "ui",
-    "css",
-    "uikit",
-    "react-ui",
-    "framework"
-  ],
-  "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
-  },
   "devDependencies": {
-    "@babel/runtime": "^7.18.9",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@rollup/plugin-typescript": "^8.5.0",
+    "bannerjs": "^2.1.0",
+    "rollup": "^2.79.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.3"
   }
 }

@@ -1,1 +1,1 @@
-core/README.md
+react/README.md

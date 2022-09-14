@@ -1,10 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import CodeLayout from 'react-code-preview-layout';
 import { getMetaId, isMeta, getURLParameters } from 'markdown-react-code-preview-loader';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import styled from 'styled-components';
 import rehypeIgnore from 'rehype-ignore';
-import data from '@uiw/react-monorepo-template/README.md';
+import data from '@uiw/react-watermark/README.md';
 import { CodeComponent, ReactMarkdownNames } from 'react-markdown/lib/ast-to-react';
 
 const MarkdownStyle = styled(MarkdownPreview)`
@@ -16,20 +16,13 @@ const MarkdownStyle = styled(MarkdownPreview)`
   overflow: auto;
   padding: 2.3rem 3rem;
   border-radius: 5px;
+  z-index: 10;
+  position: relative;
 `;
 
 const CodePreview: CodeComponent | ReactMarkdownNames = ({ inline, node, ...props }) => {
   const $dom = useRef<HTMLDivElement>(null);
   const { 'data-meta': meta, ...rest } = props as any;
-
-  useEffect(() => {
-    if ($dom.current) {
-      const parentElement = $dom.current.parentElement;
-      if (parentElement && parentElement.parentElement) {
-        parentElement.parentElement.replaceChild($dom.current, parentElement);
-      }
-    }
-  }, [$dom]);
 
   if (inline || !isMeta(meta)) {
     return <code {...props} />;

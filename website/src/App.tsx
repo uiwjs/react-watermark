@@ -1,7 +1,6 @@
 import GitHubCorners from '@uiw/react-github-corners';
 import styled from 'styled-components';
-import pkg from '@uiw/react-monorepo-template/package.json';
-import MonorepoTemplate from '@uiw/react-monorepo-template';
+import Watermark from '@uiw/react-watermark';
 import logo from './logo.svg';
 import MarkdownPreview from './Markdown';
 
@@ -30,20 +29,27 @@ const Info = styled.p`
   max-width: 24rem;
 `;
 
+const Version = styled.sup`
+  position: absolute;
+  font-size: 1rem;
+  padding-left: 0.4rem;
+`;
+
 export default function App() {
   const version = VERSION;
   return (
-    <Warpper className="wmde-markdown-color">
-      <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-monorepo-template" />
-      <Header>
-        <Logo src={logo} alt="react logo" />
-        <h1>
-          {pkg.name} {version}
-        </h1>
-        <Info>Simple React package development project example template.</Info>
-        <MonorepoTemplate>import MonorepoTemplate from '@uiw/react-monorepo-template';</MonorepoTemplate>
-      </Header>
-      <MarkdownPreview />
-    </Warpper>
+    <Watermark content="React Watermark">
+      <Warpper className="wmde-markdown-color">
+        <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-monorepo-template" />
+        <Header>
+          <Logo src={logo} alt="react logo" />
+          <h1>
+            React Watermark <Version>{version}</Version>
+          </h1>
+          <Info>A react component that adds a watermark to an area of a web page.</Info>
+        </Header>
+        <MarkdownPreview />
+      </Warpper>
+    </Watermark>
   );
 }

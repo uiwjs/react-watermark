@@ -1,84 +1,90 @@
-react-monorepo-template
+Watermark.js
 ===
 
-[![Build & Deploy](https://github.com/uiwjs/react-monorepo-template/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-monorepo-template/actions/workflows/ci.yml)
-[![Coverage Status](https://uiwjs.github.io/react-monorepo-template/badges.svg)](https://uiwjs.github.io/react-monorepo-template/coverage/lcov-report/)
+JavaScript library for generating image watermarks using canvas.
 
-Simple [React](https://github.com/facebook/react) package development project example template.
-
-## Directory Structure
+## Install
 
 ```bash
-├── LICENSE
-├── README.md -> core/README.md
-├── core              # 📦 package @uiw/react-monorepo-template
-│   ├── README.md
-│   ├── cjs           # 🔄 Compiled cjs directory
-│   ├── esm           # 🔄 Compiled esm directory
-│   ├── src           # Package source directory
-│   ├── dist.css      # 🔄 compile less to css
-│   ├── package.json  # name => @uiw/react-monorepo-template
-│   └── tsconfig.json
-├── lerna.json
-├── package.json
-├── tsconfig.json
-├── test              # ⛑ test case
-└── website           # 🐝 Package example test, website
-    ├── README.md
-    ├── package.json
-    ├── public
-    ├── src
-    └── tsconfig.json
+npm i @uiw/watermark.js
 ```
 
-## Development
+## Using
 
-1. Install
+```js
+import Watermark from '@uiw/watermark.js';
 
-```bash
-npm install
+const watermark = new Watermark({
+  content: 'Hello Watermark!'
+});
+watermark.create().then((mark) => {
+  console.log('output:', mark)
+})
+.catch((err) => {
+  console.log(err, 'err')
+})
 ```
 
-2. Dependencies in the installation package and example
+Or manually download and link `watermark.js` in your HTML, It can also be downloaded via [UNPKG](https://unpkg.com/browse/@uiw/watermark.js/):
 
-```bash
-npm run hoist
+CDN: [UNPKG](https://unpkg.com/@uiw/watermark.js/dist/) | [jsDelivr](https://cdn.jsdelivr.net/npm/@uiw/watermark.js/) | [Githack](https://raw.githack.com/uiwjs/watermark.js/gh-pages/watermark.min.js) | [Statically](https://cdn.statically.io/gh/uiwjs/watermark.js/gh-pages/watermark.min.js)
+
+```html
+<style>
+  #mark {
+    z-index: 9;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: 332px;
+    pointer-events: none;
+    background-repeat: repeat;
+  }
+</style>
+<body style="position: relative; min-height: 100vh;">
+  <div id="mark"></div>
+  <script src="https://unpkg.com/@uiw/watermark.js/dist/watermark.min.js"></script>
+  <script>
+    const $dom = document.querySelector('div#mark');
+    const watermark = new Watermark({
+      content: 'Hello Watermark!'
+    });
+    watermark.create().then((mark) => {
+      $dom.style.backgroundImage = `url(${mark})`
+    })
+    .catch((err) => {
+      console.log(err, 'err')
+    })
+  </script>
+</body>
 ```
 
-3. To develop, run the self-reloading build:
+## API
 
-```bash
-npm run build  # Compile packages      📦 @uiw/react-monorepo-template
-npm run watch  # Real-time compilation 📦 @uiw/react-monorepo-template
-```
-
-4. Run Document Website Environment:
-
-```bash
-npm run start
-```
-
-5. To contribute, please fork repos, add your patch and tests for it (in the `test/` folder) and submit a pull request.
-
-```
-npm run test
-```
-
-
-### Using
-
-```jsx mdx:preview
-import React from "react";
-import MonorepoTemplate from '@uiw/react-monorepo-template';
-
-export default function App() {
-  return (
-    <div className="container">
-    <MonorepoTemplate>
-      Example test
-    </MonorepoTemplate>
-    </div>
-  );
+```ts
+export interface WatermarkOptions {
+  content?: string;
+  imgage?: string;
+  rotate?: number;
+  image?: string;
+  gapX?: number;
+  gapY?: number;
+  width?: number;
+  height?: number;
+  offsetLeft?: number;
+  offsetTop?: number;
+  fontSize?: number;
+  fontFamily?: string;
+  fontWeight?: string;
+  fontColor?: string;
+  fontStyle?: CanvasFillStrokeStyles['fillStyle'];
+}
+export default class Watermark {
+  option: WatermarkOptions;
+  constructor(options: WatermarkOptions);
+  create(): Promise<string>;
 }
 ```
 
@@ -86,12 +92,12 @@ export default function App() {
 
 As always, thanks to our amazing contributors!
 
-<a href="https://github.com/uiwjs/react-monorepo-template/graphs/contributors">
-  <img src="https://uiwjs.github.io/react-monorepo-template/CONTRIBUTORS.svg" />
+<a href="https://github.com/uiwjs/react-watermark/graphs/contributors">
+  <img src="https://uiwjs.github.io/react-watermark/CONTRIBUTORS.svg" />
 </a>
 
-Made with [github-action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+Made with [action-contributors](https://github.com/uiwjs/github-action-contributors).
 
 ## License
 
-Licensed under the MIT License.
+Licensed under the [MIT License](https://opensource.org/licenses/MIT).

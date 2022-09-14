@@ -2,11 +2,9 @@
   "private": true,
   "scripts": {
     "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
-    "build": "lerna exec --scope @uiw/* -- tsbb build && npm run css:build && npm run css:build:dist",
-    "watch": "lerna exec \"tsbb watch\" --scope @uiw/* & npm run css:watch",
-    "css:build": "lerna exec --scope @uiw/* -- compile-less -d src -o esm",
-    "css:watch": "lerna exec --scope @uiw/* -- compile-less -d src -o esm --watch",
-    "css:build:dist": "lerna exec --scope @uiw/* -- compile-less -d src -o lib --combine=dist.css",
+    "build": "lerna exec --scope @uiw/* -- npm run build",
+    "watch": "lerna exec \"tsbb watch\" --scope @uiw/react-watermark",
+    "watch:core": "lerna exec --scope @uiw/watermark.js -- npm start",
     "bundle": "lerna exec --scope @uiw/* -- ncc build src/index.tsx --target web --filename dist",
     "bundle:min": "lerna exec --scope @uiw/* -- ncc build src/index.tsx --target web --filename dist --minify",
     "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
@@ -40,12 +38,14 @@
   },
   "workspaces": [
     "website",
+    "react",
     "core"
   ],
   "devDependencies": {
     "@kkt/ncc": "^1.0.14",
     "compile-less-cli": "^1.8.13",
     "husky": "^8.0.1",
+    "jest-canvas-mock": "^2.4.0",
     "lerna": "^5.4.3",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
