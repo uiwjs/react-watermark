@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-watermark",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React Monorepo Template.",
   "author": "Kenny Wong <wowohoo@qq.com>",
   "homepage": "https://uiwjs.github.io/react-watermark",
@@ -48,7 +48,7 @@
     "react-dom": ">=16.9.0"
   },
   "dependencies": {
-    "@uiw/watermark.js": "0.0.4"
+    "@uiw/watermark.js": "0.0.5"
   },
   "devDependencies": {
     "@babel/runtime": "^7.18.9",
