@@ -38,7 +38,7 @@ const Version = styled.sup`
 export default function App() {
   const version = VERSION;
   return (
-    <Watermark content="React Watermark">
+    <Watermark content="React Watermark (uiw)">
       <Warpper className="wmde-markdown-color">
         <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-monorepo-template" />
         <Header>
