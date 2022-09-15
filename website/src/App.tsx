@@ -40,7 +40,7 @@ export default function App() {
   return (
     <Watermark content="React Watermark (uiw)">
       <Warpper className="wmde-markdown-color">
-        <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-monorepo-template" />
+        <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-watermark" />
         <Header>
           <Logo src={logo} alt="react logo" />
           <h1>
