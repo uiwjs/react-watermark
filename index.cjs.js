@@ -1,4 +1,4 @@
-/*! @uiw/watermark.js v0.0.3 | MIT © 2022 kenny wang <wowohoo@qq.com> https://uiwjs.github.io/react-watermark */
+/*! @uiw/watermark.js v0.0.4 | MIT © 2022 kenny wang <wowohoo@qq.com> https://uiwjs.github.io/react-watermark */
 'use strict';
 
 /**
@@ -46,40 +46,42 @@ class Watermark {
         const canvasOffsetTop = offsetTop || gapY / 2;
         canvas.setAttribute('width', canvasWidth);
         canvas.setAttribute('height', canvasHeight);
-        if (ctx) {
-            ctx.translate(canvasOffsetLeft * ratio, canvasOffsetTop * ratio);
-            ctx.rotate((Math.PI / 180) * Number(rotate));
-            const markWidth = width * ratio;
-            const markHeight = height * ratio;
-            if (image) {
-                const img = new Image();
-                img.crossOrigin = 'anonymous';
-                img.referrerPolicy = 'no-referrer';
-                img.src = image;
-                img.onload = () => {
-                    ctx.drawImage(img, 0, 0, markWidth, markHeight);
-                    return Promise.resolve(canvas.toDataURL());
-                };
-                img.onerror = (error) => {
-                    return Promise.reject(error);
-                };
-            }
-            else if (content) {
-                const markSize = Number(fontSize) * ratio;
-                ctx.font = `${fontStyle} normal ${fontWeight} ${markSize}px/${markHeight}px ${fontFamily}`;
-                ctx.fillStyle = fontColor;
-                if (Array.isArray(content)) {
-                    content === null || content === void 0 ? void 0 : content.forEach((item, index) => ctx.fillText(item, 0, index * 50));
+        return new Promise(async (resolve, reject) => {
+            if (ctx) {
+                ctx.translate(canvasOffsetLeft * ratio, canvasOffsetTop * ratio);
+                ctx.rotate((Math.PI / 180) * Number(rotate));
+                const markWidth = width * ratio;
+                const markHeight = height * ratio;
+                if (image) {
+                    const img = new Image();
+                    img.crossOrigin = 'anonymous';
+                    img.referrerPolicy = 'no-referrer';
+                    img.src = image;
+                    img.onload = async () => {
+                        ctx.drawImage(img, 0, 0, markWidth, markHeight);
+                        return resolve(canvas.toDataURL());
+                    };
+                    img.onerror = (error) => {
+                        return reject(error);
+                    };
                 }
-                else {
-                    ctx.fillText(content, 0, 0);
+                else if (content) {
+                    const markSize = Number(fontSize) * ratio;
+                    ctx.font = `${fontStyle} normal ${fontWeight} ${markSize}px/${markHeight}px ${fontFamily}`;
+                    ctx.fillStyle = fontColor;
+                    if (Array.isArray(content)) {
+                        content === null || content === void 0 ? void 0 : content.forEach((item, index) => ctx.fillText(item, 0, index * 50));
+                    }
+                    else {
+                        ctx.fillText(content, 0, 0);
+                    }
+                    return resolve(canvas.toDataURL());
                 }
-                return Promise.resolve(canvas.toDataURL());
             }
-        }
-        else {
-            return Promise.reject('Error: Canvas is not supported in the current environment');
-        }
+            else {
+                return reject('Error: Canvas is not supported in the current environment');
+            }
+        });
     }
 }
 

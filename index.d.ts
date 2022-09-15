@@ -1,6 +1,6 @@
 export interface WatermarkOptions {
     /** watermark text content */
-    content?: string;
+    content?: string | string[];
     /**
      * When the watermark is drawn, the rotation angle, in `°`. @default `-22`
      */
