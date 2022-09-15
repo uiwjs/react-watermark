@@ -25,6 +25,9 @@ import React from "react";
 import Watermark from '@uiw/react-watermark';
 
 const style = { width: '100%', maxWidth: '100%', height: 200, display: 'block' };
+const text = `React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+
+Declarative views make your code more predictable and easier to debug.`;
 
 export default function App() {
   return (
@@ -32,7 +35,30 @@ export default function App() {
       content="UIW Watermark"
       style={{ background: '#fff' }}
     >
-      <textarea style={style} defaultValue="Added watermark here" />
+      <textarea style={style} spellCheck={false} defaultValue={text} />
+    </Watermark>
+  );
+}
+```
+
+Multi-line watermark text
+
+```jsx mdx:preview
+import React from "react";
+import Watermark from '@uiw/react-watermark';
+
+const style = { width: '100%', maxWidth: '100%', height: 200, display: 'block' };
+const text = `React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+
+Declarative views make your code more predictable and easier to debug.`;
+
+export default function App() {
+  return (
+    <Watermark
+      content={['UIW Watermark', '多行文字']}
+      style={{ background: '#fff' }}
+    >
+      <textarea style={style} spellCheck={false} defaultValue="Added watermark here" />
     </Watermark>
   );
 }
@@ -45,12 +71,16 @@ import React from "react";
 import Watermark from '@uiw/react-watermark';
 
 const style = { width: '100%', maxWidth: '100%', height: 200, display: 'block' };
+const text = `React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+
+Declarative views make your code more predictable and easier to debug.`;
 
 export default function App() {
   return (
     <Watermark
       content="UIW Watermark"
       rotate={20}
+      gapY={0}
       gapX={5}
       width={100}
       gapY={80}
@@ -59,7 +89,35 @@ export default function App() {
       fontColor="rgb(255 0 0 / 25%)"
       style={{ background: '#fff' }}
     >
-      <textarea style={style} defaultValue="Added watermark here" />
+      <textarea style={style} spellCheck={false} defaultValue={text} />
+    </Watermark>
+  );
+}
+```
+
+Image watermark
+
+```jsx mdx:preview
+import React from "react";
+import Watermark from '@uiw/react-watermark';
+
+const style = { width: '100%', maxWidth: '100%', height: 200, display: 'block' };
+const text = `React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+
+Declarative views make your code more predictable and easier to debug.
+
+Build encapsulated components that manage their own state, then compose them to make complex UIs.
+
+Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.`;
+
+export default function App() {
+  return (
+    <Watermark
+      height={32}
+      width={165}
+      image="https://uiwjs.github.io/react-watermark/watermark-example.svg"
+    >
+      <textarea style={style} spellCheck={false} defaultValue={text} />
     </Watermark>
   );
 }

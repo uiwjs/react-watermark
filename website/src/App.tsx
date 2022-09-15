@@ -38,7 +38,12 @@ const Version = styled.sup`
 export default function App() {
   const version = VERSION;
   return (
-    <Watermark content="React Watermark (uiw)">
+    <Watermark
+      content="React Watermark (uiw)"
+      height={32}
+      width={165}
+      image="https://uiwjs.github.io/react-watermark/watermark-example.svg"
+    >
       <Warpper className="wmde-markdown-color">
         <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-watermark" />
         <Header>

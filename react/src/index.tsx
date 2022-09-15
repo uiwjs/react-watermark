@@ -2,7 +2,7 @@ import React, { CSSProperties, ForwardedRef, forwardRef, useEffect, useState } f
 import WatermarkJS, { WatermarkOptions } from '@uiw/watermark.js';
 
 export interface WatermarkProps
-  extends Omit<React.AllHTMLAttributes<HTMLDivElement>, 'width' | 'height'>,
+  extends Omit<React.AllHTMLAttributes<HTMLDivElement>, 'width' | 'height' | 'content'>,
     WatermarkOptions {
   prefixCls?: string;
   /** watermark style */
