@@ -1,4 +1,4 @@
-/*! @uiw/watermark.js v0.0.4 | MIT © 2022 kenny wang <wowohoo@qq.com> https://uiwjs.github.io/react-watermark */
+/*! @uiw/watermark.js v0.0.5 | MIT © 2022 kenny wang <wowohoo@qq.com> https://uiwjs.github.io/react-watermark */
 /**
  * Returns the ratio of the current display device's physical pixel resolution to CSS pixel resolution
  * @param context
