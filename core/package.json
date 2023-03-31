@@ -15,8 +15,8 @@
   "unpkg": "./dist/watermark.js",
   "jsdelivr": "./dist/watermark.js",
   "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "start": "rollup -c rollup.config.js -w"
+    "build": "rollup -c rollup.config.ts --configPlugin typescript",
+    "start": "rollup -c rollup.config.ts --configPlugin typescript -w"
   },
   "keywords": [],
   "files": [
@@ -25,13 +25,13 @@
     "!dist/index.html"
   ],
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^22.0.2",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^14.1.0",
-    "@rollup/plugin-typescript": "^8.5.0",
-    "bannerjs": "^2.1.0",
-    "rollup": "^2.79.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "tslib": "^2.4.0"
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "bannerjs": "^3.0.1",
+    "rollup": "^3.20.2",
+    "tslib": "^2.5.0"
   }
 }

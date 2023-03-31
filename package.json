@@ -3,7 +3,7 @@
   "scripts": {
     "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
     "build": "lerna exec --scope @uiw/* -- npm run build",
-    "watch": "lerna exec \"tsbb watch\" --scope @uiw/react-watermark",
+    "watch": "lerna exec --scope @uiw/react-watermark -- npm run start",
     "watch:core": "lerna exec --scope @uiw/watermark.js -- npm start",
     "bundle": "lerna exec --scope @uiw/* -- ncc build src/index.tsx --target web --filename dist",
     "bundle:min": "lerna exec --scope @uiw/* -- ncc build src/index.tsx --target web --filename dist --minify",

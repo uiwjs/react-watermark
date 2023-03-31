@@ -3,7 +3,10 @@
  * JavaScript library for generating image watermarks using canvas. 
  * 
  * Copyright (c) 2023 kenny wang <wowohoo@qq.com> 
- * https://uiwjs.github.io/react-watermark 
+ * https://github.com/uiwjs/react-watermark.git 
+ * 
+ * @website: https://uiwjs.github.io/react-watermark
+ 
  * Licensed under the MIT license 
  */
 
