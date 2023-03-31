@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import CodeLayout from 'react-code-preview-layout';
 import { getMetaId, isMeta, getURLParameters } from 'markdown-react-code-preview-loader';
 import MarkdownPreview from '@uiw/react-markdown-preview';
@@ -25,7 +24,6 @@ const MarkdownStyle = styled(MarkdownPreview)`
 `;
 
 const CodePreview: CodeComponent | ReactMarkdownNames = ({ inline, node, ...props }) => {
-  const $dom = useRef<HTMLDivElement>(null);
   const { 'data-meta': meta, ...rest } = props as any;
 
   if (inline || !isMeta(meta)) {
