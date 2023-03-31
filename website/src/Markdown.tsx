@@ -7,6 +7,10 @@ import rehypeIgnore from 'rehype-ignore';
 import data from '@uiw/react-watermark/README.md';
 import { CodeComponent, ReactMarkdownNames } from 'react-markdown/lib/ast-to-react';
 
+const Preview = CodeLayout.Preview;
+const Code = CodeLayout.Code;
+const Toolbar = CodeLayout.Toolbar;
+
 const MarkdownStyle = styled(MarkdownPreview)`
   margin: 0 auto;
   box-shadow: rgb(8 15 41 / 8%) 0.5rem 0.5rem 2rem 0px, rgb(8 15 41 / 8%) 0px 0px 1px 0px;
@@ -34,14 +38,12 @@ const CodePreview: CodeComponent | ReactMarkdownNames = ({ inline, node, ...prop
     const code = data.data[metaId].value || '';
     const param = getURLParameters(meta);
     return (
-      <CodeLayout
-        ref={$dom}
-        style={{ marginBottom: 10 }}
-        toolbar={param.title || 'Example'}
-        code={<pre {...rest} />}
-        text={code}
-      >
-        <Child />
+      <CodeLayout>
+        <Preview>
+          <Child />
+        </Preview>
+        <Toolbar>{param.title || 'Example'}</Toolbar>
+        <Code>{code}</Code>
       </CodeLayout>
     );
   }
