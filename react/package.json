@@ -12,8 +12,8 @@
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
-    "watch": "tsbb watch",
-    "build": "tsbb build"
+    "watch": "tsbb watch src/index.tsx --use-babel",
+    "build": "tsbb build src/index.tsx --use-babel --bail"
   },
   "files": [
     "dist.css",
