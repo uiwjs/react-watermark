@@ -6,7 +6,7 @@ on:
 
 jobs:
   windows:
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -31,12 +31,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          registry-url: 'https://registry.npmjs.org'
 
       - run: npm install
       - run: npm run build
       - run: npm run coverage
       - run: npm run bundle
       - run: npm run bundle:min
+      - run: npm install
       - run: npm run doc
 
       - name: Generate Contributors Images
@@ -108,14 +110,18 @@ jobs:
       # - run: npm install @jsdevtools/npm-publish -g
       # - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./react/package.json
 
-      - name: 📦 @uiw/react-watermark publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./react/package.json
 
-      - name: 📦 @uiw/watermark.js publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./core/package.json
+      - run: npm publish --access public
+        name: 📦 @uiw/react-watermark to NPM
+        working-directory: react
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - run: npm publish --access public
+        name: 📦 @uiw/watermark.js to NPM
+        working-directory: core
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    
