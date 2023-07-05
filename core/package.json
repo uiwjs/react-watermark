@@ -25,13 +25,13 @@
     "!dist/index.html"
   ],
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-commonjs": "^25.0.2",
     "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-typescript": "^11.0.0",
-    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@rollup/plugin-terser": "^0.4.3",
     "bannerjs": "^3.0.1",
-    "rollup": "^3.20.2",
-    "tslib": "^2.5.0"
+    "rollup": "^3.26.1",
+    "tslib": "^2.6.0"
   }
 }

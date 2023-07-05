@@ -10,7 +10,6 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
     "strict": false,
     "skipLibCheck": true,
     "outDir": "lib",
