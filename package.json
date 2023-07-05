@@ -27,7 +27,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "<rootDir>/packages/**/*.{tsx,ts}",
+      "<rootDir>/react/src/*.{tsx,ts}",
       "!**/*.{js,d.ts}"
     ],
     "testMatch": [
