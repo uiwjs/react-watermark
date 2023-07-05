@@ -40,8 +40,10 @@ const CodePreview: CodeComponent | ReactMarkdownNames = ({ inline, node, ...prop
         <Preview>
           <Child />
         </Preview>
-        <Toolbar>{param.title || 'Example'}</Toolbar>
-        <Code>{code}</Code>
+        <Toolbar text={code}>{param.title || 'Example'}</Toolbar>
+        <Code>
+          <code {...rest} />
+        </Code>
       </CodeLayout>
     );
   }
