@@ -1,18 +1,12 @@
-import path from 'path';
-import webpack, { Configuration } from 'webpack';
-import lessModules from '@kkt/less-modules';
+import webpack from 'webpack';
+import { LoaderConfOptions, WebpackConfiguration } from 'kkt';
+import { disableScopePlugin } from '@kkt/scope-plugin-options';
 import { mdCodeModulesLoader } from 'markdown-react-code-preview-loader';
-import scopePluginOptions from '@kkt/scope-plugin-options';
-import { LoaderConfOptions } from 'kkt';
 import pkg from './package.json';
 
-export default (conf: Configuration, env: 'development' | 'production', options: LoaderConfOptions) => {
-  conf = lessModules(conf, env, options);
+export default (conf: WebpackConfiguration, env: 'production' | 'development', options: LoaderConfOptions) => {
   conf = mdCodeModulesLoader(conf);
-  conf = scopePluginOptions(conf, env, {
-    ...options,
-    allowedFiles: [path.resolve(process.cwd(), 'README.md'), path.resolve(process.cwd(), 'src')],
-  });
+  conf = disableScopePlugin(conf);
   conf.plugins!.push(
     new webpack.DefinePlugin({
       VERSION: JSON.stringify(pkg.version),
