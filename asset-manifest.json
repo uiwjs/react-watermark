@@ -1,13 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.5bb9e363.css",
-    "main.js": "/static/js/main.3ac75c1b.js",
+    "main.js": "/static/js/main.4e34b58c.js",
     "refractor-prismjs-vendor.js": "/static/js/refractor-prismjs-vendor.f6dda1cf.js",
     "react-vendor.js": "/static/js/react-vendor.e1575b27.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
     "main.5bb9e363.css.map": "/static/css/main.5bb9e363.css.map",
-    "main.3ac75c1b.js.map": "/static/js/main.3ac75c1b.js.map",
+    "main.4e34b58c.js.map": "/static/js/main.4e34b58c.js.map",
     "refractor-prismjs-vendor.f6dda1cf.js.map": "/static/js/refractor-prismjs-vendor.f6dda1cf.js.map",
     "react-vendor.e1575b27.js.map": "/static/js/react-vendor.e1575b27.js.map"
   },
@@ -15,6 +14,6 @@
     "static/js/refractor-prismjs-vendor.f6dda1cf.js",
     "static/js/react-vendor.e1575b27.js",
     "static/css/main.5bb9e363.css",
-    "static/js/main.3ac75c1b.js"
+    "static/js/main.4e34b58c.js"
   ]
 }
