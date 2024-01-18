@@ -1,6 +1,7 @@
 Watermark.js
 ===
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![Build & Deploy](https://github.com/uiwjs/react-watermark/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-watermark/actions/workflows/ci.yml)
 [![Coverage Status](https://uiwjs.github.io/react-watermark/badges.svg)](https://uiwjs.github.io/react-watermark/coverage/lcov-report/)
 [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/watermark.js.svg?style=flat)](https://www.npmjs.com/package/@uiw/watermark.js)

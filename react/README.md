@@ -3,6 +3,7 @@ react-watermark
 ===
 <!--rehype:ignore:end-->
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![Build & Deploy](https://github.com/uiwjs/react-watermark/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-watermark/actions/workflows/ci.yml)
 [![Coverage Status](https://uiwjs.github.io/react-watermark/badges.svg)](https://uiwjs.github.io/react-watermark/coverage/lcov-report/)
 [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/react-watermark.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-watermark)

@@ -2,6 +2,7 @@
   "name": "@uiw/watermark.js",
   "version": "1.0.1",
   "homepage": "https://uiwjs.github.io/react-watermark",
+  "funding": "https://jaywcjlove.github.io/#/sponsor",
   "author": "kenny wang <wowohoo@qq.com>",
   "repository": {
     "type": "git",
