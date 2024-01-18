@@ -14,6 +14,14 @@ root.render(
     width={165}
     image="https://uiwjs.github.io/react-watermark/watermark-example.svg"
   >
+    <MarkdownPreviewExample.NavMenu
+      title="Watermark"
+      menus={[
+        <a target="_blank" href="https://jaywcjlove.github.io/#/sponsor" rel="noopener noreferrer">
+          Sponsor
+        </a>,
+      ]}
+    />
     <MarkdownPreviewExample
       source={data.source}
       components={data.components}
