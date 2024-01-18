@@ -16,6 +16,8 @@ Not dependent on **uiw**.
 
 ```bash
 npm i @uiw/react-watermark
+# Or
+npm i @uiw/watermark.js
 ```
 
 ### Using

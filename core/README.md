@@ -1,12 +1,19 @@
 Watermark.js
 ===
 
-JavaScript library for generating image watermarks using canvas.
+[![Build & Deploy](https://github.com/uiwjs/react-watermark/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-watermark/actions/workflows/ci.yml)
+[![Coverage Status](https://uiwjs.github.io/react-watermark/badges.svg)](https://uiwjs.github.io/react-watermark/coverage/lcov-report/)
+[![NPM Downloads](https://img.shields.io/npm/dm/@uiw/watermark.js.svg?style=flat)](https://www.npmjs.com/package/@uiw/watermark.js)
+[![NPM Version](https://img.shields.io/npm/v/@uiw/watermark.js.svg)](https://www.npmjs.com/package/@uiw/watermark.js)
+
+JavaScript library for generating image watermarks using canvas. support [`react`](https://www.npmjs.com/package/@uiw/react-watermark).
 
 ## Install
 
 ```bash
 npm i @uiw/watermark.js
+# Or
+npm i @uiw/react-watermark
 ```
 
 ## Using
@@ -59,6 +66,29 @@ CDN: [UNPKG](https://unpkg.com/@uiw/watermark.js/dist/) | [jsDelivr](https://cdn
     })
   </script>
 </body>
+```
+
+## Used in React
+
+```jsx
+import React from "react";
+import Watermark from '@uiw/react-watermark';
+
+const style = { width: '100%', maxWidth: '100%', height: 200, display: 'block' };
+const text = `React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+
+Declarative views make your code more predictable and easier to debug.`;
+
+export default function App() {
+  return (
+    <Watermark
+      content="UIW Watermark"
+      style={{ background: '#fff' }}
+    >
+      <textarea style={style} spellCheck={false} defaultValue={text} />
+    </Watermark>
+  );
+}
 ```
 
 ## API
