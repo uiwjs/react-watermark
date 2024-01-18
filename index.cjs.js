@@ -1,4 +1,4 @@
-/*! @uiw/watermark.js v1.0.0 | MIT © 2023 kenny wang <wowohoo@qq.com> https://uiwjs.github.io/react-watermark */
+/*! @uiw/watermark.js v1.0.1 | MIT © 2024 kenny wang <wowohoo@qq.com> https://uiwjs.github.io/react-watermark */
 'use strict';
 
 /**
