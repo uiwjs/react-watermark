@@ -116,12 +116,10 @@ jobs:
       # - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./react/package.json
 
 
-      - run: npm publish --access public
+      - run: NODE_AUTH_TOKEN="" npm publish --access public --provenance
         name: 📦 @uiw/react-watermark to NPM
         working-directory: react
         continue-on-error: true
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - run: NODE_AUTH_TOKEN="" npm publish --access public --provenance
         name: 📦 @uiw/watermark.js to NPM
