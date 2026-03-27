@@ -10,13 +10,13 @@
   "dependencies": {
     "@uiw/react-markdown-preview-example": "^2.1.2",
     "@uiw/react-watermark": "1.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@kkt/scope-plugin-options": "^7.5.2",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "kkt": "^7.5.2",
     "markdown-react-code-preview-loader": "^2.1.2"
   },
