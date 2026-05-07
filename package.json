@@ -45,7 +45,7 @@
   ],
   "devDependencies": {
     "@kkt/ncc": "^1.0.14",
-    "@types/react-test-renderer": "^18.0.0",
+    "@types/react-test-renderer": "^19.0.0",
     "compile-less-cli": "^1.8.13",
     "husky": "^8.0.1",
     "jest": "^29.5.0",
